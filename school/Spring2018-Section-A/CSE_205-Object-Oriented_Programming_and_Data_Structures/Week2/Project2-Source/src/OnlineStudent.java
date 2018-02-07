@@ -1,4 +1,13 @@
-import tuition.TuitionConstants;
+//******************************************************************************************************** // CLASS: classname (classname.java)
+//
+// OnlineStudent Class - extends Student class
+//
+// CSE 205 - Project 2
+// CSE205 Object Oriented Programming and Data Structures, Spring Section A // Project Number: 2
+//
+// James J. Kim
+// jjkim30@asu.edu
+// ********************************************************************************************************
 
 public class OnlineStudent extends Student {
 
@@ -33,7 +42,7 @@ public class OnlineStudent extends Student {
         double baseTuition = this.getCredits() * TuitionConstants.ONLINE_CREDIT_RATE;
 
         if (this.getTechFeee() == true) {
-            baseTuition += baseTuition + TuitionConstants.ONLINE_TECH_FEE;
+            baseTuition = baseTuition + TuitionConstants.ONLINE_TECH_FEE;
         }
 
         // Set the tuition with the newly calculated tuition rate for online student

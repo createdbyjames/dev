@@ -13,7 +13,6 @@
 // Arizona State University, Tempe, AZ 85287-8809
 // Web: http://www.devlang.com
 //**************************************************************************************************************
-package tuition;
 
 public class TuitionConstants {
 

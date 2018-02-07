@@ -1,3 +1,13 @@
+//******************************************************************************************************** // CLASS: classname (classname.java)
+//
+// Student class that contains all the information about the student including tuition
+//
+// CSE 205 - Project 2
+// CSE205 Object Oriented Programming and Data Structures, Spring Section A // Project Number: 2
+//
+// James J. Kim
+// jjkim30@asu.edu
+// ********************************************************************************************************
 public abstract class Student implements Comparable<Student> {
 
     private int _credits;
@@ -11,7 +21,7 @@ public abstract class Student implements Comparable<Student> {
      * Default Constructor
      */
     public Student() {
-
+        this("Not Specified", "Not Specified", "Not Specified");
     }
 
     /**
@@ -26,9 +36,8 @@ public abstract class Student implements Comparable<Student> {
         _lastName = lastName;
     }
 
-    public void calcTuition(){
-
-    }
+    // Abstract method - leave it to the subclasses to define the implementation of this method
+    public void calcTuition(){}
 
     /**
      * Compares the student id of the passed in student object to the instance of this object
@@ -37,14 +46,15 @@ public abstract class Student implements Comparable<Student> {
      */
     @Override
     public int compareTo(Student student) {
-
         return getId().compareTo(student.getId());
-
     }
 
+    /**
+     * Returns student's credit
+     * @return _credits
+     */
     public int getCredits() {
-
-        return 1;
+        return _credits;
     }
 
     /**

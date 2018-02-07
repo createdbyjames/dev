@@ -1,4 +1,13 @@
-import tuition.TuitionConstants;
+//******************************************************************************************************** // CLASS: classname (classname.java)
+//
+// OnCampusStudent Class - extends Student class
+//
+// CSE 205 - Project 2
+// CSE205 Object Oriented Programming and Data Structures, Spring Section A // Project Number: 2
+//
+// James J. Kim
+// jjkim30@asu.edu
+// ********************************************************************************************************
 
 public class OnCampusStudent extends Student {
 
@@ -45,7 +54,7 @@ public class OnCampusStudent extends Student {
         baseTuition += getProgramFee();
 
         if (this.getCredits() > TuitionConstants.MAX_CREDITS) {
-            baseTuition += baseTuition + (this.getCredits() - TuitionConstants.MAX_CREDITS) * TuitionConstants.ONCAMP_ADD_CREDITS;
+            baseTuition = baseTuition + (this.getCredits() - TuitionConstants.MAX_CREDITS) * TuitionConstants.ONCAMP_ADD_CREDITS;
         }
 
         // Set the tuition

@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>530</x>
+      <y>180</y>
+      <w>390</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>p03::Student
+--
+-mExamList: ArrayList&lt;Integer&gt;
+-mFirstName: String
+-mHomeworkList: ArrayList&lt;Integer&gt;
+-mLastName: String
+--
++Student(pFirstName: String, pLastName: String): &lt;&lt;ctor&gt;&gt;
++addExam(pScore: int): void
++addHomework(pScore: int): void
++compareTo(pStudent: Student): int
++getExam(pNum: int): int
+-getExamList(): ArrayList&lt;Integer&gt;
++getFirstName(): String
++getHomework(pNum: int): int
+-getHomeworkList(): ArrayList&lt;Integer&gt;
++getLastName(): String
++setExam(pNum: int, pScore: int): void
+-setExamList(pExamList: ArrayList&lt;Integer&gt;): void
++setFirstName(pFirstName: String): void
++setHomework(pNum: int, pScore: int): void
+-setHomeworkList(pHomeworkList: ArrayList&lt;Integer&gt;): void
++setLastName(pLastName: String): void
++toString(): String &lt;&lt;override&gt;&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>970</x>
+      <y>180</y>
+      <w>290</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>p03::View
+--
+_+FRAME_WIDTH:int = 500_
+_+FRAME_HEIGHT: int = 250_
+-mClearButton: JButton
+-mExamText: JTextField[]
+-mExitButton: JButton
+-mHomeworkText: JTextField[]
+-mMain: Main
+-mSaveButton: JButton
+-mSearchButton: JButton
+-mSearchText: JTextField
+-mStudent: Student
+--
++View(pMain: Main): &lt;&lt;ctor&gt;&gt;
++actionPerformed(pEvent: ActionEvent): void
+-clear(): void
+-displayStudent(pStudent: Student): void
++messageBox(pMessage: String): void
+-saveStudent(pStudent: Student): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>180</x>
+      <y>80</y>
+      <w>240</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>p03::Main
+--
+-mRoster: Roster
+-mView: View
+--
++main(pArgs: String[]): void
++exit(): void
+-getRoster(): Roster
+-getView(): View
+-run(): void
++search(pLastName: String): Student
+-setRoster(pRoster: Roster): void
+-setView(pView: View): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>190</x>
+      <y>560</y>
+      <w>360</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>p03::Roster
+--
+-mStudentList: ArrayList&lt;Student&gt;
+--
++Roster(): &lt;&lt;ctor&gt;&gt;
++addStudent(pStudent: Student): void
++getStudent(pLastName: String): Student
++getStudentList(): ArrayList&lt;Student&gt;
+-setStudentList(pStudentList: ArrayList&lt;Student&gt;): void
++sortRoster(): void
++toString(): String &lt;&lt;override&gt;&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>640</x>
+      <y>740</y>
+      <w>480</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>p03::GradebookReader
+--
+-mIn: Scanner
+--
++GradebookReader(pFname: String): &lt;&lt;ctor&gt;&gt; &lt;&lt;throws FileNotFoundException&gt;&gt;
+-readExam(pStudent: Student): void
++readGradebook(): Roster
+-readHomework(pStudent: Student): void
+-readRoster(): Roster
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1140</x>
+      <y>740</y>
+      <w>340</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>p03::Searcher
+--
+--
+_+search(pList: ArrayList&lt;Student&gt;, pKey: String): int_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>140</x>
+      <y>390</y>
+      <w>190</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>p03::CourseConstants
+--
+_+NUM_EXAMS: int = 2_
+_+NUM_HOMEWORKS: int = 4_
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>100</x>
+      <y>780</y>
+      <w>520</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>p03::GradebookWriter
+--
+--
++GradebookWriter(pFname: String): &lt;&lt;ctor&gt;&gt; &lt;&lt;throws FileNotFoundException&gt;&gt;
++writeGradebook(pRoster: Roster): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>270</x>
+      <y>720</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>java.io.PrintWriter
+--
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>360</x>
+      <y>230</y>
+      <w>50</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=  1
+m2=  1</panel_attributes>
+    <additional_attributes>30;30;30;330</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>370</x>
+      <y>20</y>
+      <w>650</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=   1
+m2=   1</panel_attributes>
+    <additional_attributes>30;60;30;30;630;30;630;160</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>390</x>
+      <y>190</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>140;30;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>300</x>
+      <y>720</y>
+      <w>50</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;30;30;60</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>520</x>
+      <y>640</y>
+      <w>290</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>270;100;270;30;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>830</x>
+      <y>490</y>
+      <w>50</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>30;250;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>620</x>
+      <y>80</y>
+      <w>230</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+Comparable&lt;Student&gt;
+--
+--
+compareTo(pStudent: Student): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>610</x>
+      <y>110</y>
+      <w>222</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+              &lt;&lt;implements&gt;&gt;</panel_attributes>
+    <additional_attributes>120;30;120;70</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>140</x>
+      <y>420</y>
+      <w>154</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+        &lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>80;30;80;140</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>900</x>
+      <y>610</y>
+      <w>440</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Sorter
+--
+--
+_-partition(pList: ArrayList&lt;Student&gt;, pFromIdx: int, pToIdx: int): int_
+_-quickSort(pList: ArrayList&lt;Student&gt;, pFromIdx: int, pToIdx: int): void_
+_+sort(pList: ArrayList&lt;Student&gt;): void_
+_-swap(pList: ArrayList&lt;Student&gt;, pIdx1: int, pIdx2: int): void_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>520</x>
+      <y>530</y>
+      <w>764</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>710;80;710;50;30;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>520</x>
+      <y>570</y>
+      <w>810</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+        &lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>790;170;790;150;360;150;360;30;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>80</x>
+      <y>0</y>
+      <w>970</w>
+      <h>410</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>70;390;70;380;70;350;70;30;950;30;950;180</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1040</x>
+      <y>80</y>
+      <w>280</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>java.awt.event.ActionListner
+--
+actionPerformed(pEvent: ActionEvent): void
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1070</x>
+      <y>100</y>
+      <w>218</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+             &lt;&lt;implements&gt;&gt;</panel_attributes>
+    <additional_attributes>110;30;110;80</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>200</x>
+      <y>680</y>
+      <w>50</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>30;30;30;80;30;100</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>0</x>
+      <y>400</y>
+      <w>700</w>
+      <h>500</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+        &lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>140;30;80;30;80;480;680;480;680;460</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>890</x>
+      <y>480</y>
+      <w>70</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>30;30;50;30;50;130</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>890</x>
+      <y>200</y>
+      <w>100</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>30;30;80;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>450</x>
+      <y>320</y>
+      <w>100</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+m1=    1
+m2=1..*</panel_attributes>
+    <additional_attributes>30;240;30;30;80;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>890</x>
+      <y>460</y>
+      <w>510</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>30;30;490;30;490;280</additional_attributes>
+  </element>
+</diagram>

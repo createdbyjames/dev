@@ -190,6 +190,19 @@ public class DList {
         return node;
     }
 
+    public boolean inOrder(Node node) {
+        boolean inOrder = true;
+
+        while (node.getNext() != null) {
+            if (node.getData() < node.getNext().getData()) {
+                inOrder = true;
+            }
+            node = node.getNext();
+        }
+
+        return inOrder;
+    }
+
     /**
      * Accessor method for the mSize field.
      */
